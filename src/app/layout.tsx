@@ -1,12 +1,30 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./styles/index.scss";
+import type { Metadata } from 'next';
+import localFont from 'next/font/local';
+import './styles/index.scss';
 
-const inter = Inter({ subsets: ["latin"] });
+const NeueHaasGroteskDisplayPro = localFont({
+  src: [
+    {
+      path: '../../public/fonts/NeueHaasDisplayLight.ttf',
+      weight: '300',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/NeueHaasDisplayRoman.ttf',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../../public/fonts/NeueHaasDisplayMedium.ttf',
+      weight: '500',
+      style: 'normal',
+    },
+  ],
+});
 
 export const metadata: Metadata = {
-  title: "The Infin",
-  description: "The Infin layout page",
+  title: 'The Infin',
+  description: 'The Infin layout page',
 };
 
 export default function RootLayout({
@@ -16,7 +34,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={NeueHaasGroteskDisplayPro.className}>
+        {children}
+      </body>
     </html>
   );
 }

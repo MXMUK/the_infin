@@ -1,0 +1,38 @@
+@import '../../../styles/utils/vars';
+
+.button {
+  border-radius: 999px;
+  text-transform: uppercase;
+
+  text-align: center;
+  align-items: center;
+
+  flex-shrink: 0;
+
+  &:hover {
+    cursor: url('../../../../../public/images/cursor-hover.svg'), auto;
+  }
+
+  &_transparent {
+    border: 1px solid $gray-100-color;
+  }
+
+  &_dark {
+    background: $mainDark-color;
+
+    color: white;
+    font-weight: 600;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      background: $mainYellow-color;
+      color: $mainDark-color;
+    }
+  }
+
+  &_white {
+    background: white;
+    font-weight: 600;
+  }
+}

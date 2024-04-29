@@ -1,16 +1,16 @@
 @mixin onDesktop {
-  @media (min-width: 1200px) {
-    @content;
-  }
-}
-
-@mixin onLaptop {
-  @media (min-width: 768px) {
+  @media (min-width: 1440px) {
     @content;
   }
 }
 
 @mixin onTablet {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin onPhone {
   @media (min-width: 640px) {
     @content;
   }

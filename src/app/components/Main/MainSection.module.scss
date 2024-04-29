@@ -1,0 +1,51 @@
+@import '../../styles/utils/extends';
+@import '../../styles/utils/vars';
+
+.main {
+  // background: #000;
+  @extend %container;
+  
+  margin-top: 130px;
+
+  &__player {
+    position: relative;
+
+    &__image {
+      border-radius: 30px;
+      overflow: hidden;
+
+      height: 720px;
+    }
+
+    &__button {
+      position: absolute;
+      bottom: 30px;
+
+      margin-left: auto;
+      margin-right: auto;
+
+      left: 0;
+      right: 0;
+
+      display: flex;
+      justify-content: end;
+      padding: 12px;
+
+      gap: 33px;
+
+      &__playIcon {
+        height: 66px;
+        width: 66px;
+        border-radius: 100%;
+
+        background: $mainYellow-color;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 1px solid $mainDark-color;
+      }
+    }
+  }
+}

@@ -1,19 +1,32 @@
-html {
+* {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
-  box-sizing: inherit;
-}
-
-body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body,
+p,
+h1,
+h2,
+h6 {
   margin: 0;
   padding: 0;
-  font-weight: normal;
 }
 
-ol, ul {
+ul {
+  margin: 0;
+  padding: 0;
   list-style: none;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
 }
 
 img {

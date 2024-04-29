@@ -1,0 +1,26 @@
+.splashScreen {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+
+  background: #000;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  user-select: none;
+
+  &__logo {
+    display: flex;
+    align-items: start;
+
+    flex-shrink: 0;
+  }
+
+  &__the {
+    margin-right: 49px;
+  }
+}

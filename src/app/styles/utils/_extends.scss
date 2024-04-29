@@ -1,65 +1,84 @@
 @import '../utils/mixins';
 
-%main-title-text {
-  font-size: 32px;
-  line-height: 41px;
-  letter-spacing: -0.01em;
-  font-weight: 800;
+%container {
+  padding: 0 30px;
 
-  @include onTablet {
-    font-size: 48px;
-    line-height: 56px;
-  }
+  // @include onTablet {
+  //   padding: 0 72px;
+  // }
+
+  // @include onPhone {
+  //   padding: 0 20px;
+  // }
 }
 
-%product-title {
-  font-weight: 800;
-  font-size: 22px;
-  line-height: 140%;
+%alignAbsoluteElement {
+  left: 50%;
+  top: 50%;
 
-  @include onTablet {
-    font-weight: 800;
-    font-size: 32px;
-    line-height: 41px;
-    letter-spacing: -0.01em;
-  }
+  transform: translateX(-50%) translateY(-50%);
 }
 
-%about-title {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 26px;
-}
+// %main-title-text {
+//   font-size: 32px;
+//   line-height: 41px;
+//   letter-spacing: -0.01em;
+//   font-weight: 800;
 
-%main-subtitle-text {
-  font-size: 22px;
-  line-height: 31px;
-  letter-spacing: -0.01em;
-  font-weight: 800;
+//   @include onTablet {
+//     font-size: 48px;
+//     line-height: 56px;
+//   }
+// }
 
-  @include onTablet {
-    font-size: 32px;
-    line-height: 41px;
-  }
-}
+// %product-title {
+//   font-weight: 800;
+//   font-size: 22px;
+//   line-height: 140%;
 
-%upper-text {
-  font-size: 12px;
-  line-height: 12px;
-  letter-spacing: 0.04em;
-  font-weight: 800;
-  text-transform: uppercase;
-}
+//   @include onTablet {
+//     font-weight: 800;
+//     font-size: 32px;
+//     line-height: 41px;
+//     letter-spacing: -0.01em;
+//   }
+// }
 
-%button-text {
-  font-size: 14px;
-  font-weight: 700;
-  font-family: 'Mont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
-    'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-}
+// %about-title {
+//   font-weight: 600;
+//   font-size: 20px;
+//   line-height: 26px;
+// }
 
-%small-text {
-  font-size: 12px;
-  line-height: 15px;
-  font-weight: 600;
-}
+// %main-subtitle-text {
+//   font-size: 22px;
+//   line-height: 31px;
+//   letter-spacing: -0.01em;
+//   font-weight: 800;
+
+//   @include onTablet {
+//     font-size: 32px;
+//     line-height: 41px;
+//   }
+// }
+
+// %upper-text {
+//   font-size: 12px;
+//   line-height: 12px;
+//   letter-spacing: 0.04em;
+//   font-weight: 800;
+//   text-transform: uppercase;
+// }
+
+// %button-text {
+//   font-size: 14px;
+//   font-weight: 700;
+//   font-family: 'Mont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell',
+//     'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+// }
+
+// %small-text {
+//   font-size: 12px;
+//   line-height: 15px;
+//   font-weight: 600;
+// }

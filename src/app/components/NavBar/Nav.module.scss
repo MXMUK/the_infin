@@ -1,0 +1,29 @@
+@import '../../styles/utils/extends';
+@import '../../styles/utils/vars';
+
+.nav {
+  @extend %container;
+
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  z-index: 999;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__menuWrapper {
+    display: flex;
+    gap: 24px;
+
+    &__menu {
+      font-size: 14px;
+    }
+  }
+
+  &__noShrink {
+    flex-shrink: 0;
+  }
+}
