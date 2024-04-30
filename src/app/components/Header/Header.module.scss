@@ -4,7 +4,6 @@
 .header {
   @extend %container;
 
-  margin-top: calc(136px + 120px);
   padding-bottom: 30px;
 
   display: flex;
@@ -17,8 +16,43 @@
     gap: 128px;
   }
 
+  &__cursor {
+    // height: 240px;
+    // width: 303px;
+    // mask-image: url(../../../../public/images/plus.svg);
+    // background: white;
+    // position: fixed;
+    // z-index: 100;
+    // top: 0;
+    // left: 0;
+
+    // pointer-events: none;
+
+    position: fixed;
+    z-index: 100;
+    display: flex;
+    flex-flow: row;
+    align-content: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    height: 10px;
+    width: 10px;
+    background-color: #1e91d6;
+    border-radius: 200px;
+    pointer-events: none;
+    color: #fff;
+    text-align: center;
+    font-size: 16px;
+  }
+
   &__mobileExample {
     display: flex;
+
+    margin-top: calc(136px + 120px);
+
+    position: relative;
+    z-index: 1;
 
     &__text {
       min-width: 113px;
@@ -36,19 +70,13 @@
 
       height: 160px;
       width: 201px;
-      // height: 160px;
-
-      // border-radius: 20px;
-
-      // background-image: url('../../../../public/images/mobile-app.png');
-      // background-size: 318px 212px;
-      // background-position-x: center;
     }
   }
 
   &__mainBlock {
     display: flex;
-    // margin-top: 128px;
+    position: relative;
+    z-index: 1;
 
     &__titleContainer {
       width: 100%;
@@ -66,6 +94,10 @@
 
       margin-right: 25px;
       margin-top: 6px;
+
+      & div {
+        background: $primary-color;
+      }
     }
 
     &__title {
@@ -76,6 +108,8 @@
       font-weight: 500;
       text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
       text-transform: uppercase;
+
+      background: $primary-color;
 
       @include onDesktop {
         font-size: 88px;
