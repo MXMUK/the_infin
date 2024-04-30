@@ -1,5 +1,5 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 
 import styles from './Header.module.scss';
 
@@ -31,13 +31,12 @@ const Header: FC = () => {
   }
 
   const variants = {
-    default: {
+    hidden: {
+      opacity: 0,
       x: mouseXPosition,
       y: mouseYPosition,
-      transition: {
-        type: 'tween',
-      },
     },
+    visible: { opacity: 1, x: mouseXPosition - 151, y: mouseYPosition - 120},
   };
 
   const [showCursor, setShowCursor] = useState(true);
@@ -50,23 +49,27 @@ const Header: FC = () => {
       setShowCursor(true);
     };
 
-    if (ref.current) {
-      ref.current.addEventListener('mouseenter', handleMouseEnter);
-    }
+    const currentRef = ref.current;
 
-    if (ref.current) {
-      ref.current.addEventListener('mouseleave', handleMouseLeave);
+    if (currentRef) {
+      currentRef.addEventListener('mouseenter', handleMouseEnter);
+      currentRef.addEventListener('mouseleave', handleMouseLeave);
     }
 
     return () => {
-      if (ref.current) {
-        ref.current.removeEventListener('mouseleave', handleMouseLeave);
-      }
-      if (ref.current) {
-        ref.current.removeEventListener('mouseenter', handleMouseEnter);
+      if (currentRef) {
+        currentRef.removeEventListener('mouseleave', handleMouseLeave);
+        currentRef.removeEventListener('mouseenter', handleMouseEnter);
       }
     };
-  }, [ref]);
+  }, []);
+
+  const cursorTransition = {
+    opacity: {
+      delay: 0,
+      // duration: 2
+    } 
+  };
 
   return (
     <header className={styles.header} ref={ref}>
@@ -101,12 +104,26 @@ const Header: FC = () => {
         </div>
       </div>
 
-      <motion.div
-        style={{ display: showCursor ? 'block' : 'none' }}
+      {/* <motion.div
+        style={{ opacity: showCursor ? 1 : 0 }}
         variants={variants}
         className={styles.header__cursor}
         animate="default"
-      />
+      /> */}
+
+      <AnimatePresence>
+        {showCursor && (
+          <motion.div
+            variants={variants}
+            animate="visible"
+            initial="hidden"
+            // animate="visible"
+            exit="hidden"
+            transition={cursorTransition}
+            className={styles.header__cursor}
+          />
+        )}
+      </AnimatePresence>
     </header>
   );
 };
