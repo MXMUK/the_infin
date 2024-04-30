@@ -33,10 +33,20 @@ const Header: FC = () => {
   const variants = {
     hidden: {
       opacity: 0,
-      x: mouseXPosition,
-      y: mouseYPosition,
+      x: mouseXPosition - 151,
+      y: mouseYPosition - 120,
     },
-    visible: { opacity: 1, x: mouseXPosition - 151, y: mouseYPosition - 120},
+    visible: {
+      opacity: 1,
+      x: mouseXPosition - 151,
+      y: mouseYPosition - 120,
+    },
+  };
+
+  const cursorTransition = {
+    opacity: {
+      // delay: 1,
+    },
   };
 
   const [showCursor, setShowCursor] = useState(true);
@@ -64,20 +74,13 @@ const Header: FC = () => {
     };
   }, []);
 
-  const cursorTransition = {
-    opacity: {
-      delay: 0,
-      // duration: 2
-    } 
-  };
-
   return (
     <header className={styles.header} ref={ref}>
       <NavBar />
 
       <div className={styles.header__mobileExample}>
         <div className={styles.header__mobileExample__text}>
-          Web + <br /> Mobile app
+          <div>Web + <br /> Mobile app</div>
         </div>
 
         <ParallaxContainer
@@ -103,13 +106,6 @@ const Header: FC = () => {
           </Button>
         </div>
       </div>
-
-      {/* <motion.div
-        style={{ opacity: showCursor ? 1 : 0 }}
-        variants={variants}
-        className={styles.header__cursor}
-        animate="default"
-      /> */}
 
       <AnimatePresence>
         {showCursor && (

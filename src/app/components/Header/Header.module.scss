@@ -51,6 +51,10 @@
       margin-right: 25px;
 
       color: $gray-200-color;
+      
+      & div {
+        background: $primary-color;
+      }
     }
 
     &__image {

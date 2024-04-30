@@ -19,6 +19,8 @@
     display: flex;
     gap: 24px;
 
+    background: $primary-color;
+
     &__menu {
       font-size: 14px;
     }
@@ -26,5 +28,7 @@
 
   &__noShrink {
     flex-shrink: 0;
+    background: $primary-color;
+    border-radius: 999px;
   }
 }
