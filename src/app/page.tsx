@@ -17,8 +17,8 @@ export default function Home() {
     if (isLoading) return;
   }, [isLoading]);
 
-  return isLoading && isHome ? (
-  // return false ? (
+  // return isLoading && isHome ? (
+  return false ? (
     <SplashScreen finishLoading={() => setIsLoading(false)} />
   ) : (
     <div>

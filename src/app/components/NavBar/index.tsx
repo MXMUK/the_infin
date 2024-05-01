@@ -53,6 +53,12 @@ const NavBar: FC = () => {
     [initialHeightButton, initialHeightButton / 2]
   );
 
+  const scrollBgOpacity = useTransform(
+    scrollY,
+    [startY, endY],
+    [0, 1]
+  );
+
   const [isMenuWrapperGap, setIsMenuWrapperGap] = useState(0);
   const [menu1Display, setMenu1Display] = useState('block');
   const [menu2Display, setM2enuDisplay] = useState('none');
@@ -132,7 +138,7 @@ const NavBar: FC = () => {
   }, [scrollDistance]);
 
   return (
-    <motion.nav style={{ height: scrollNavBar }} className={styles.nav}>
+    <motion.nav style={{ height: scrollNavBar, background: `rgba(193, 193, 193, ${scrollBgOpacity})` }} className={styles.nav}>
       <motion.div
         style={{ width: scrollLogo }}
         className={styles.nav__noShrink}
