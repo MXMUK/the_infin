@@ -107,7 +107,7 @@ const Header: FC = () => {
         </div>
       </div>
 
-      <AnimatePresence>
+      {/* <AnimatePresence>
         {showCursor && (
           <motion.div
             variants={variants}
@@ -119,7 +119,7 @@ const Header: FC = () => {
             className={styles.header__cursor}
           />
         )}
-      </AnimatePresence>
+      </AnimatePresence> */}
     </header>
   );
 };
